@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formulario con js</title>
+</head>
+<body>
+    <h1 id="titulo">El mejor Ingeniero del mundo</h1>
+
+    <button onclick="mostrar()" >mostrar</button>
+
+    <img id="imagen" src="1.jpg" width="500" height="300">
+
+    <script>
+        //Cambiar Imagen al dar click y cambiar el color del titulo a rojo
+        function mostrar() {
+            document.getElementById("imagen").src="2.jpg"
+        
+            document.getElementById("titulo").style.color="red"
+        }
+       
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="myFunction()">
+    
+    <h1 id="titulo">El mejor ingeniero de la historia</h1>
+    <br>
+    <div id="mostrar"></div>
+
+    <script>
+        //Activación del evento on click desde codigo de Java
+        document.getElementById("titulo").onclick= cambiarText;
+        //Misma estructura y forma solo que cambia el llamado
+
+        function cambiarText(titulo) {
+            document.getElementById("mostrar").innerHTML= "Soy yo tu inge Juanma"
+        }
+
+        function myFunction() {
+            alert("Welcome to the page!")
+            let texto = ""
+            if (navigator.cookieEnabled) {
+                texto= "Las cookies estan activadas."
+            }else{
+                texto= "Las cookies estan desactivadas."
+            }
+            document.getElementById("mostrar").innerHTML=texto
+        }
+       
+
+
+    </script>
+</body>
+</html>

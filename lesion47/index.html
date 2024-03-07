@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ONMOUSEOVER - ONMOUSEOUT-->
+    <!-- En este caso vemos el uso de pasarle el click por encima y quitarselo-->
+    <h1 onmouseover="rojo(this)" onmouseout="green(this)">Bienvenido a la pagina!</h1>
+
+    <p>Uso de ONMOUSEDOWN - ONMOUSEUP</p>
+    <!-- ONMOUSEDOWN - ONMOUSEUP-->
+    <!-- En este caso vemos el uso de dejarle el click presionado y quitarselo-->
+    <p onmousedown="rojo(this)" onmouseup="green(this)">I`m Juan Manuel Valencia Triana
+    and i`m a systems engineer.</p>
+    <br>
+    <p>Uso de ONFUCOS - ONBLUR</p>
+    <!-- ONFOCUS - ONBLUR-->
+    <!-- En este caso vemos el uso de dejarle el click presionado y quitarselo-->
+    <input type="text" onfocus="rojoBck(this)" onblur="greenBck(this)">
+    <br>
+    <br>
+    <p>Uso de AdeventListener</p>
+    <input type="text" id="nombre">
+    <br>
+    <br>
+    <p>Uso de AdeventListener con funciones Flecha =></p>
+    <input type="text" id="flecha">
+
+    <script>
+        document.getElementById("nombre").addEventListener("focus",cambiar)
+        document.getElementById("nombre").addEventListener("blur",cambiarExit)
+
+        /*Añadir Listener desde javascript y ejecutarlos a traves de estos 2 metodos
+        de entrada y de salida para cambiarle el fondo al campo de texto*/
+        function cambiar(evento) {
+            let componente = evento.target
+
+            componente.style.background= "red"
+        }
+        function cambiarExit(evento) {
+            let componente = evento.target
+
+            componente.style.background= "blue"
+        }
+
+        //FUNCION FLECHA ------- =>
+        /*Ejecutar todo dentro del addEventListener haciendo la función ahí mismo*/
+        document.getElementById("flecha").addEventListener("focus",(evento)=>{
+            evento.target.style.background="Pink"
+        })
+        document.getElementById("flecha").addEventListener("blur",(evento)=>{
+            evento.target.style.background="Orange"
+        })
+
+
+
+        function rojo(tittle) {
+            tittle.style.color="red"
+        }
+        function rojoBck(tittle) {
+            tittle.style.background="red"
+        }
+
+        function greenBck(tittle) {
+            tittle.style.background="green"
+        }
+        function green(tittle) {
+            tittle.style.color="green"
+        }
+
+
+    </script>
+
+
+
+    
+</body>
+</html>

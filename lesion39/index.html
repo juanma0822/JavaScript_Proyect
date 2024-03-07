@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejemplo dom con js</title>
+</head>
+<body>
+    <h1 id="Cabecera">Portafolio Juan Manuel Valencia</h1>
+
+    <p id="Parrafo">Hola yo soy Juan Manuel</p>
+    <p id="Parrafo2">Estudio Ingenieria de Sistemas en la Univalle</p>
+    <p id="Parrafo3">Contactame ya!</p>
+
+    <script>
+        //Llamado a traves de javascript de todas las etiquetas del doc "p"
+         let parrafos= document.getElementsByTagName("p")
+         console.log(parrafos.length)
+
+        //Recorre todos los parrafos
+         for(let i=0; i<parrafos.length; i++){
+            console.log(parrafos[i].innerHTML)
+         }
+        
+
+
+    </script>
+    
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejemplo dom con js</title>
+</head>
+<body>
+    <h1 id="Cabecera">Ejemplo dom con javascript</h1>
+
+    <p id="Parrafo">parrafo manipulacion del DOM</p>
+
+    <script>
+         //Uso de HTML con Java, el innerHTML es para traer a lo que se esta
+         //Apuntando
+        let cabecera= document.getElementById("Cabecera");
+
+        cabecera.innerHTML = "Has ganado un Iphone15!"
+        console.log(cabecera.innerText)
+        let parrafo= document.getElementById("Parrafo").innerHTML;
+        console.log(parrafo)
+
+
+    </script>
+    
+
+
+
+</body>
+
+</html>

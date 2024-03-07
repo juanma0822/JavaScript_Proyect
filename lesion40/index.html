@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejemplo dom con js</title>
+</head>
+<body>
+    <h1 class="Titulo">Portafolio Juan Manuel Valencia</h1>
+    <h1>Sumerjete en esta experiencia</h1>
+
+    <p class="rojo">Hola yo soy Juan Manuel</p>
+    <p class="rojo">Estudio Ingenieria de Sistemas en la Univalle</p>
+    <p class="rojo">Contactame ya 3182997350!</p>
+
+    <script>
+        //Llamado a traves del QuerySelectorAll con la etiqueta y la clase
+         let parrafos= document.querySelectorAll("h1.Titulo")
+         console.log(parrafos.length)
+
+        //Recorre todos los parrafos
+         for(let i=0; i<parrafos.length; i++){
+            console.log(parrafos[i].innerHTML)
+         }
+        
+
+
+    </script>
+    
+
+
+
+</body>
+
+</html>

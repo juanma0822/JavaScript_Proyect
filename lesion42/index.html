@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formulario con js</title>
+</head>
+<body>
+    <h1 id="titulo">El mejor Ingeniero del mundo</h1>
+
+    <button onclick="changeName()" ondblclick="back()">mostrar</button>
+
+
+    <script>
+        //Cambiar Nombre del titulo al dar click en boton y regresar con doble
+        function changeName() {
+            document.getElementById("titulo").innerHTML="Soy el mas pro"
+        }
+        function back(){
+            let titulo= document.getElementById("titulo").innerHTML="El mejor Ingeniero del mundo"
+        }
+    </script>
+</body>
+
+</html>
