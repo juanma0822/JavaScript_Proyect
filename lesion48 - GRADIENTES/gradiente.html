@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body {
+            width: 600px;
+            margin: 0 auto;
+        }
+        canvas{
+            background-color: green;
+            border: solid rgb(255, 255, 0) 3px;
+        }
+    </style>
+    <script>
+    window.onload=function(){
+        canvas= document.getElementById("canvas");
+        if(canvas && canvas.getContext){
+            ctx = canvas.getContext("2d");
+            //CREACION GRADIENTE EN EL CANVAS PARA DARLE GRADIACION EN EL FONDO
+            if(ctx){
+                var gradiente= ctx.createLinearGradient(0,0,canvas.width,0);
+
+                gradiente.addColorStop(0,"blue")
+                gradiente.addColorStop(0.45,"cyan")
+                gradiente.addColorStop(0.55,"yellow")
+                gradiente.addColorStop(1,"red")
+
+                //SE AGREGA AL CANVAS EL GRADIENTE QUE HICIMOS Y SE PONE DE BACKGROUND
+                ctx.fillStyle = gradiente;
+                ctx.fillRect(0,0,canvas.width,canvas.height);
+            }else{
+                alert("Tu navegador NO soporta la etiqueta canvas");
+            }
+        }
+    }        
+    </script>
+</body>
+<canvas id="canvas" width="600" height="400">
+    Tu navegador no soporta la etiqueta canvas
+</canvas>
+</html>
