@@ -23,15 +23,14 @@
             ctx = canvas.getContext("2d");
             //CREACION GRADIENTE RADIAL EN EL CANVAS PARA DARLE GRADIACION EN EL FONDO
             if(ctx){
-                
-                var bola = new Image();
-                bola.src = "bola.png";
-
-                bola.onload = function(e){
-                    var patron= ctx.createPattern(bola, "repeat");
-                    ctx.fillStyle = patron;
-                    ctx.fillRect(210, 10, canvas.width, canvas.height);
-                };
+                var imagen= new Image();
+                imagen.src="grito.jpg";
+                imagen.onload = function(e){
+                    procesarImagen();
+                }
+                function procesarImagen() {
+                    ctx.drawImage(imagen,10,10);
+                }
             }else{
                 alert("Tu navegador NO soporta la etiqueta canvas");
             }

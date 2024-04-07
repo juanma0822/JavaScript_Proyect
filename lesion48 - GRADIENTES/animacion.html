@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animacion basiquita</title>
+</head>
+<body>
+    <style>
+        body {
+            width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        canvas{
+            background-color: green;
+        }
+    </style>
+    <script>
+        const game={
+            ctx:null,
+            canvas:null,
+            radio:10,
+            bolaX:50,
+            bolaY:100,
+            colorBola:"red",
+            disX:100
+        }
+    window.onload=function(){
+        game.canvas= document.getElementById("canvas");
+        if(canvas && canvas.getContext){
+            game.ctx = canvas.getContext("2d");
+            //CREACION GRADIENTE EN EL CANVAS PARA DARLE GRADIACION EN EL FONDO
+            if(game.ctx){
+                 game.ctx.lineWidth = game.radio;
+                 game.ctx.fillStyle = game.colorBola;
+                 mueve();
+                 setInterval(mueve,60);
+                
+            }else{
+                alert("Tu navegador NO soporta la etiqueta canvas");
+            };
+        }
+    }  
+    
+    const mueve=()=>{
+        game.bolaX += game.disX;
+        game.ctx.beginPath();
+        game.ctx.arc(game.bolaX,game.bolaY,game.radio,0,2*Math.PI,true);
+        game.ctx.fill();
+    }
+    </script>
+</body>
+<h1>Animacion basica</h1>
+<canvas id="canvas" width="600" height="400">
+    Tu navegador no soporta la etiqueta canvas
+</canvas>
+</html>

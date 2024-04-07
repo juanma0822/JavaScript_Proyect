@@ -21,17 +21,22 @@
         canvas= document.getElementById("canvas");
         if(canvas && canvas.getContext){
             ctx = canvas.getContext("2d");
-            //CREACION GRADIENTE RADIAL EN EL CANVAS PARA DARLE GRADIACION EN EL FONDO
+            //CREACION TEXTO EN EL CANVAS PARA DARLE GRADIACION EN EL FONDO
             if(ctx){
-                
-                var bola = new Image();
-                bola.src = "bola.png";
+                ctx.font= "8em Verdana";
+                ctx.lineWidth= 1.0;
+                ctx.fillStyle= "blue";
+                ctx.strokeStyle= "yellow";
 
-                bola.onload = function(e){
-                    var patron= ctx.createPattern(bola, "repeat");
-                    ctx.fillStyle = patron;
-                    ctx.fillRect(210, 10, canvas.width, canvas.height);
-                };
+                //Sombras
+                ctx.shadowColor= "black";
+                ctx.shadowOffsetX= 5;
+                ctx.shadowOffsetY= 5;
+                ctx.shadowBlur= 10;
+
+                ctx.fillText("CANVAS",35,150);
+                ctx.strokeText("CANVAS",35,150);
+                ctx.fillRect(35,150,10,10);
             }else{
                 alert("Tu navegador NO soporta la etiqueta canvas");
             }

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body {
+            width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        canvas{
+            background-color: green;
+            border: solid rgb(255, 255, 0) 3px;
+        }
+    </style>
+    <script>
+        var canvas,ctx,imagen;
+        var archivoSelect;
+    window.onload=function(){
+
+        archivoSelect = document.getElementById("archivo");
+
+
+        canvas= document.getElementById("canvas");
+        if(canvas && canvas.getContext){
+            ctx = canvas.getContext("2d");
+            //CREACION GRADIENTE RADIAL EN EL CANVAS PARA DARLE GRADIACION EN EL FONDO
+            if(ctx){
+                archivoSelect.onchange= function(e) {
+                    if(archivoSelect.value!=""){
+                        imagen.src="IMAGENES/"+archivoSelect.value
+                        imagen.onload= function(e){
+                            procesaImagen();
+                        }
+                    }
+                }
+
+                function procesaImagen(){
+                    limpiar();
+                    ctx.drawImage(imagen,10,10);
+                }
+
+                function limpiar(){
+                    ctx.clearRect(250,10,canvas.width,canvas.height);
+                }
+
+                imagen= new Image();
+                imagen.src = "grito.jpg";
+                imagen.onload = function(e) {
+                    procesaImagen();
+                }
+            }else{
+                alert("Tu navegador NO soporta la etiqueta canvas");
+            }
+        }
+    }        
+    </script>
+</body>
+
+<h1>Proceso de imagenes</h1>
+<canvas id="canvas" width="600" height="400">
+    Tu navegador no soporta la etiqueta canvas
+</canvas>
+
+Imagen:<select name="" id="archivo">
+    <option value="">--Selecione un archivo</option>
+    <option value="gato.jpeg">Gato</option>
+    <option value="perro.jpg">Perro</option>
+    <option value="conejo.jpg">Conejo</option>
+</select>
+</html>
